@@ -1,0 +1,51 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ car.brand }} {{ car.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 30px 7%;
+        }
+        .details {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+        }
+        img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        h1 { color: #1e3a5f; }
+        .price { color: #2563eb; font-size: 28px; }
+        a { color: #2563eb; }
+    </style>
+</head>
+<body>
+    <div class="details">
+        <a href="/">← Back to Cars</a>
+        <h1>{{ car.brand }} {{ car.name }}</h1>
+
+        {% if car.image %}
+        <img src="{{ car.image.url }}" alt="{{ car.name }}">
+        {% endif %}
+
+        <h2 class="price">₹{{ car.price|floatformat:0 }}</h2>
+        <p><b>Year:</b> {{ car.year }}</p>
+        <p><b>Type:</b> {{ car.car_type }}</p>
+        <p><b>Mileage:</b> {{ car.mileage }} km/l</p>
+        <p><b>Fuel:</b> {{ car.fuel_type }}</p>
+        <p><b>Transmission:</b> {{ car.transmission }}</p>
+        <p><b>Description:</b> {{ car.description|default:"No description available." }}</p>
+    </div>
+</body>
+</html>
