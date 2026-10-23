@@ -56,9 +56,11 @@
         }
         .card {
             background: white;
-            border-radius: 12px;
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 4px 15px #00000010;
+            text-align: center;
+            
         }
         .card img {
             width: 100%;
@@ -132,7 +134,7 @@
                 <div>Transmission: {{ car.transmission }}</div>
             </div>
             <br>
-            <a class="view" href="{% url 'car_detail' car.pk %}">
+            <a class="view" href="{% url 'cars_details' car.id %}">
                 View Details
             </a>
         </div>

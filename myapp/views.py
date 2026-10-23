@@ -17,4 +17,4 @@ def home(request):
     return render(request, 'home.html', {'cars': cars, 'car_types': car_types})
 def car_detail(request, car_id):
     car = Cars.objects.get(id=car_id)
-    return render(request, 'car_detail.html', {'car': car})
+    return render(request, 'cars_details.html', {'car': car})
