@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f4f6f9;
+            background: #9299a0;
             margin: 0;
             padding: 30px 7%;
         }
@@ -18,9 +18,19 @@
             background: white;
             padding: 25px;
             border-radius: 12px;
+            object-fit: cover;
+        }
+        .details:hover{
+            transform: translateY(-9px);
+            box-shadow: 0 10px 25px black ;
+            opacity: 1px;
+        }
+        .details:active{
+            transform: scale(0.97);
+            transition: transform 0.1s ease;
+            opacity: 0;
         }
         img {
-            width: 100%;
             max-height: 400px;
             object-fit: cover;
             border-radius: 8px;
@@ -32,7 +42,7 @@
 </head>
 <body>
     <div class="details">
-        <a href="/">← Back to Cars</a>
+        <button onclick="window.location.href='/'">← Back to Cars</button>
         <h1>{{ car.brand }} {{ car.name }}</h1>
 
         {% if car.image %}
